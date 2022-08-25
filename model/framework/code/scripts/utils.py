@@ -11,7 +11,7 @@ metric = "cosine"
 
 def descriptors_molmap():
     return molmap.MolMap(ftype="descriptor", metric=metric).load(
-        filename=os.path.join(root, "../../checkpoints/descriptor.mp")
+        filename=os.path.abspath(os.path.join(root, "../../../checkpoints/descriptor.mp"))
     )
 
 
@@ -21,5 +21,5 @@ def fingerprints_molmap():
         bitsinfo.Subtypes.isin(["MACCSFP", "PharmacoErGFP", "PubChemFP"])
     ].IDs.tolist()
     return molmap.MolMap(ftype="fingerprint", metric=metric, flist=flist).load(
-        filename=os.path.join(root, "../../checkpoints/fingerprint.mp")
+        filename=os.path.abspath(os.path.join(root, "../../../checkpoints/fingerprint.mp"))
     )

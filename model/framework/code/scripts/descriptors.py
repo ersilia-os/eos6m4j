@@ -21,6 +21,7 @@ with open(input_file, "r") as f:
         smiles_list += [r[0]]
 
 X = mp.batch_transform(smiles_list)
+print("Output shape", X.shape)
 
-with open(output_file, "w") as f:
+with open(output_file, "wb") as f:
     np.save(f, X)
