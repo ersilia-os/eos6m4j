@@ -84,7 +84,44 @@ class Model(object):
         return result
 
     def fingerprints(self, smiles_list):
-        return None
+        tmp_folder = tempfile.mkdtemp(prefix="eos-")
+        data_file = os.path.join(tmp_folder, self.DATA_FILE)
+        output_file = os.path.join(tmp_folder, self.OUTPUT_FILE)
+        log_file = os.path.join(tmp_folder, self.LOG_FILE)
+        with open(data_file, "w") as f:
+            f.write("smiles"+os.linesep)
+            for smiles in smiles_list:
+                f.write(smiles+os.linesep)
+        run_file = os.path.join(tmp_folder, self.RUN_FILE)
+        with open(run_file, "w") as f:
+            lines = [
+                "bash {0}/run_fingerprints.sh {0} {1} {2}".format( # <-- EDIT: match method name (run_predict.sh, run_calculate.sh, etc.)
+                    self.framework_dir,
+                    data_file,
+                    output_file
+                )
+            ]
+            f.write(os.linesep.join(lines))
+        cmd = "bash {0}".format(run_file)
+        with open(log_file, "w") as fp:
+            subprocess.Popen(
+                cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
+            ).wait()
+        with open(output_file, "rb") as f:
+            X = np.load(f)
+        R = []
+        for i in range(X.shape[0]):
+            X_i = X[i]
+            R += [{"molmap": X_i.tolist()}] # <-- EDIT: Modify according to type of output (Float, String...)
+        meta = {
+            "molmap": None 
+        }
+        result = {
+            "result": R,
+            "meta": meta
+        }
+        shutil.rmtree(tmp_folder)
+        return result
 
 
 class Artifact(BentoServiceArtifact):
