@@ -5,7 +5,7 @@
 - Tags: Image, Descriptor
 
 # Model description
-Molecular maps based on broadly learned knowledge-based representations.
+Molecular maps based on broadly learned knowledge-based representations. Note that, for now, this model returns data in flat format, and reshape needs to be done. For descriptors, please apply (37,37) reshaping, and for fingerprints, (37,36).
 - Input: Compound
 - Output: Image (i.e. matrix/tensor of floats) 
 - Model type: Descriptor
