@@ -67,7 +67,7 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open(output_file, "r") as f:
+        with open(output_file, "rb") as f:
             X = np.load(f)
         R = []
         for i in range(X.shape[0]):
