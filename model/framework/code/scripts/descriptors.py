@@ -24,6 +24,8 @@ with open(input_file, "r") as f:
 X = mp.batch_transform(smiles_list)
 X = np.sum(X, axis=3)
 print("Output shape", X.shape)
+X = X.reshape(X.shape[0], X.shape[1]*X.shape[2])
+print("Output shape", X.shape)
 
 with open(output_file, "wb") as f:
     np.save(f, X)
