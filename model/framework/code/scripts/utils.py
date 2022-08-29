@@ -39,5 +39,5 @@ def fit_fingeprints_molmap():
 
 def fingerprints_molmap():
     mp = _get_fingerprints_molmap()
-    mp.load(filename=fingerprints_filename)
+    return mp.load(filename=fingerprints_filename)
 
