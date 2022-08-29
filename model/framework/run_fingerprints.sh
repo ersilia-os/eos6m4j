@@ -1,1 +1,1 @@
-python $1/code/scripts/descriptors.py $2 $3
+python $1/code/scripts/fingerprints.py $2 $3

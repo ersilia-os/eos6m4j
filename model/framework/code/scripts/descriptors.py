@@ -12,6 +12,7 @@ input_file = sys.argv[1]
 output_file = sys.argv[2]
 
 mp = descriptors_molmap()
+print(mp)
 
 with open(input_file, "r") as f:
     smiles_list = []
@@ -21,6 +22,7 @@ with open(input_file, "r") as f:
         smiles_list += [r[0]]
 
 X = mp.batch_transform(smiles_list)
+X = np.sum(X, axis=3)
 print("Output shape", X.shape)
 
 with open(output_file, "wb") as f:
