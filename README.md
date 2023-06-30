@@ -23,6 +23,9 @@ Molecular representation of small molecules via descriptor-based or fingerprint-
 * [Source Code](https://github.com/shenwanxiang/bidd-molmap)
 * Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos6m4j)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://www.nature.com/articles/s42256-021-00301-6) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
