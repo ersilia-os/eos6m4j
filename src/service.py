@@ -1,3 +1,4 @@
+import csv
 from typing import List
 
 from bentoml import BentoService, api, artifacts
@@ -67,19 +68,14 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open(output_file, "rb") as f:
-            X = np.load(f)
-        R = []
-        for i in range(X.shape[0]):
-            X_i = X[i]
-            R += [{"molmap": X_i.tolist()}] # <-- EDIT: Modify according to type of output (Float, String...)
-        meta = {
-            "molmap": None 
-        }
-        result = {
-            "result": R,
-            "meta": meta
-        }
+        with open(output_file, "r") as f:
+            reader = csv.reader(f)
+            h = next(reader)
+            R = []
+            for r in reader:
+                R += [{"molmap": r }] # <-- EDIT: Modify according to type of output (Float, String...)
+        meta = {"outcome": h}
+        result = {"result": R, "meta": meta}
         shutil.rmtree(tmp_folder)
         return result
 
@@ -107,19 +103,14 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open(output_file, "rb") as f:
-            X = np.load(f)
-        R = []
-        for i in range(X.shape[0]):
-            X_i = X[i]
-            R += [{"molmap": X_i.tolist()}] # <-- EDIT: Modify according to type of output (Float, String...)
-        meta = {
-            "molmap": None 
-        }
-        result = {
-            "result": R,
-            "meta": meta
-        }
+        with open(output_file, "r") as f:
+            reader = csv.reader(f)
+            h = next(reader)
+            R = []
+            for r in reader:
+                R += [{"molmap": r }] # <-- EDIT: Modify according to type of output (Float, String...)
+        meta = {"outcome": h}
+        result = {"result": R, "meta": meta}
         shutil.rmtree(tmp_folder)
         return result
 
