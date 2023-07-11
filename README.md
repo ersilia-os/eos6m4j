@@ -1,11 +1,11 @@
-# Molecular maps based on broadly learned knowledge-based representations
+# Molecular maps Descriptors based on broadly learned knowledge-based representations
 
 Molecular representation of small molecules via descriptor-based or fingerprint-based molecular maps (images). Typically, the goal is to use these images as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.
 
 ## Identifiers
 
 * EOS model ID: `eos6m4j`
-* Slug: `bidd-molmap`
+* Slug: `bidd-molmap-dsp`
 
 ## Characteristics
 
@@ -25,6 +25,8 @@ Molecular representation of small molecules via descriptor-based or fingerprint-
 
 ## Ersilia model URLs
 * [GitHub](https://github.com/ersilia-os/eos6m4j)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos6m4j) (AMD64)
 
 ## Citation
 

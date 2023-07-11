@@ -1,3 +1,4 @@
+import csv
 from typing import List
 
 from bentoml import BentoService, api, artifacts
@@ -43,7 +44,7 @@ class Model(object):
     def set_framework_dir(self, dest):
         self.framework_dir = os.path.abspath(dest)
 
-    def descriptors(self, smiles_list):
+    def run(self, smiles_list):
         tmp_folder = tempfile.mkdtemp(prefix="eos-")
         data_file = os.path.join(tmp_folder, self.DATA_FILE)
         output_file = os.path.join(tmp_folder, self.OUTPUT_FILE)
@@ -55,7 +56,7 @@ class Model(object):
         run_file = os.path.join(tmp_folder, self.RUN_FILE)
         with open(run_file, "w") as f:
             lines = [
-                "bash {0}/run_descriptors.sh {0} {1} {2}".format( # <-- EDIT: match method name (run_predict.sh, run_calculate.sh, etc.)
+                "bash {0}/run.sh {0} {1} {2}".format( # <-- EDIT: match method name (run_predict.sh, run_calculate.sh, etc.)
                     self.framework_dir,
                     data_file,
                     output_file
@@ -67,63 +68,16 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open(output_file, "rb") as f:
-            X = np.load(f)
-        R = []
-        for i in range(X.shape[0]):
-            X_i = X[i]
-            R += [{"molmap": X_i.tolist()}] # <-- EDIT: Modify according to type of output (Float, String...)
-        meta = {
-            "molmap": None 
-        }
-        result = {
-            "result": R,
-            "meta": meta
-        }
+        with open(output_file, "r") as f:
+            reader = csv.reader(f)
+            h = next(reader)
+            R = []
+            for r in reader:
+                R += [{"molmap": [Float(x) for x in r] }] # <-- EDIT: Modify according to type of output (Float, String...)
+        meta = {"outcome": h}
+        result = {"result": R, "meta": meta}
         shutil.rmtree(tmp_folder)
         return result
-
-    def fingerprints(self, smiles_list):
-        tmp_folder = tempfile.mkdtemp(prefix="eos-")
-        data_file = os.path.join(tmp_folder, self.DATA_FILE)
-        output_file = os.path.join(tmp_folder, self.OUTPUT_FILE)
-        log_file = os.path.join(tmp_folder, self.LOG_FILE)
-        with open(data_file, "w") as f:
-            f.write("smiles"+os.linesep)
-            for smiles in smiles_list:
-                f.write(smiles+os.linesep)
-        run_file = os.path.join(tmp_folder, self.RUN_FILE)
-        with open(run_file, "w") as f:
-            lines = [
-                "bash {0}/run_fingerprints.sh {0} {1} {2}".format( # <-- EDIT: match method name (run_predict.sh, run_calculate.sh, etc.)
-                    self.framework_dir,
-                    data_file,
-                    output_file
-                )
-            ]
-            f.write(os.linesep.join(lines))
-        cmd = "bash {0}".format(run_file)
-        with open(log_file, "w") as fp:
-            subprocess.Popen(
-                cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
-            ).wait()
-        with open(output_file, "rb") as f:
-            X = np.load(f)
-        R = []
-        for i in range(X.shape[0]):
-            X_i = X[i]
-            R += [{"molmap": X_i.tolist()}] # <-- EDIT: Modify according to type of output (Float, String...)
-        meta = {
-            "molmap": None 
-        }
-        result = {
-            "result": R,
-            "meta": meta
-        }
-        shutil.rmtree(tmp_folder)
-        return result
-
-
 class Artifact(BentoServiceArtifact):
     def __init__(self, name):
         super(Artifact, self).__init__(name)
@@ -174,15 +128,10 @@ class Artifact(BentoServiceArtifact):
 @artifacts([Artifact("model")])
 class Service(BentoService):
     @api(input=JsonInput(), batch=True)
-    def descriptors(self, input: List[JsonSerializable]): # <-- EDIT: rename if necessary 
+    def run(self, input: List[JsonSerializable]): # <-- EDIT: rename if necessary 
         input = input[0]
         smiles_list = [inp["input"] for inp in input]
-        output = self.artifacts.model.descriptors(smiles_list) # <-- EDIT: rename if necessary
+        output = self.artifacts.model.run(smiles_list) # <-- EDIT: rename if necessary
         return [output]
 
-    @api(input=JsonInput(), batch=True)
-    def fingerprints(self, input: List[JsonSerializable]): # <-- EDIT: rename if necessary 
-        input = input[0]
-        smiles_list = [inp["input"] for inp in input]
-        output = self.artifacts.model.fingerprints(smiles_list) # <-- EDIT: rename if necessary
-        return [output]
+   

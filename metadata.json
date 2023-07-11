@@ -1,8 +1,8 @@
 {
     "Identifier": "eos6m4j",
-    "Slug": "bidd-molmap",
+    "Slug": "bidd-molmap-dsp",
     "Status": "Ready",
-    "Title": "Molecular maps based on broadly learned knowledge-based representations",
+    "Title": "Molecular maps Descriptors based on broadly learned knowledge-based representations",
     "Description": "Molecular representation of small molecules via descriptor-based or fingerprint-based molecular maps (images). Typically, the goal is to use these images as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.\n",
     "Mode": "Pretrained",
     "Input": [
@@ -22,11 +22,15 @@
     "Output Shape": "Matrix",
     "Interpretation": "Image representation of a molecule. Each pixel represents a molecular feature",
     "Tag": [
-        "Fingerprint",
         "Descriptor"
     ],
     "Publication": "https://www.nature.com/articles/s42256-021-00301-6",
     "Source Code": "https://github.com/shenwanxiang/bidd-molmap",
     "License": "GPL-3.0",
-    "Contributor": "miquelduranfrigola"
+    "Contributor": "miquelduranfrigola",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
+    "DockerHub": "https://hub.docker.com/r/ersiliaos/eos6m4j",
+    "Docker Architecture": [
+        "AMD64"
+    ]
 }
