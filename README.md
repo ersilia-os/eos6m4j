@@ -1,11 +1,11 @@
-# Molecular maps Descriptors based on broadly learned knowledge-based representations
+# Molecular maps based on broadly learned knowledge-based representations
 
-Molecular representation of small molecules via descriptor-based or fingerprint-based molecular maps (images). Typically, the goal is to use these images as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.
+Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.
 
 ## Identifiers
 
 * EOS model ID: `eos6m4j`
-* Slug: `bidd-molmap-dsp`
+* Slug: `bidd-molmap-desc`
 
 ## Characteristics
 
