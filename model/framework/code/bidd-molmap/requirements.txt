@@ -19,3 +19,5 @@ mhfp==1.9.2
 tensorflow-gpu==2.0.0
 tensorflow==2.0.0
 faerun
+
+
