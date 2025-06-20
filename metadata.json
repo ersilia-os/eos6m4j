@@ -3,21 +3,18 @@
     "Slug": "bidd-molmap-desc",
     "Status": "Ready",
     "Title": "Molecular maps based on broadly learned knowledge-based representations",
-    "Description": "Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.\n",
+    "Description": "Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.",
+    "Deployment": [
+        "Local"
+    ],
     "Source": "Local",
     "Source Type": "External",
+    "Task": "Representation",
+    "Subtask": "Featurization",
     "Input": [
         "Compound"
     ],
     "Input Dimension": 1,
-    "Task": "Representation",
-    "Subtask": "Featurization",
-    "Biomedical Area": [
-        "Any"
-    ],
-    "Target Organism": [
-        "Not Applicable"
-    ],
     "Output": [
         "Image",
         "Descriptor"
@@ -28,19 +25,24 @@
     "Tag": [
         "Descriptor"
     ],
-    "Publication": "https://www.nature.com/articles/s42256-021-00301-6",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
+    ],
     "Publication Type": "Peer reviewed",
     "Publication Year": 2021,
+    "Publication": "https://www.nature.com/articles/s42256-021-00301-6",
     "Source Code": "https://github.com/shenwanxiang/bidd-molmap",
     "License": "GPL-3.0-only",
     "Contributor": "miquelduranfrigola",
     "Incorporation Date": "2022-08-25",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos6m4j",
     "Docker Architecture": [
         "AMD64"
     ],
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
-    "Deployment": [
-        "Local"
-    ]
+    "Model Size": 433.0,
+    "Environment Size": 1083.0
 }
