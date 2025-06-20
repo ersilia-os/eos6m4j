@@ -4,33 +4,43 @@
     "Status": "Ready",
     "Title": "Molecular maps based on broadly learned knowledge-based representations",
     "Description": "Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.\n",
-    "Mode": "Pretrained",
+    "Source": "Local",
+    "Source Type": "External",
     "Input": [
         "Compound"
     ],
-    "Input Shape": "Single",
-    "Task": [
-        "Generative"
+    "Input Dimension": 1,
+    "Task": "Representation",
+    "Subtask": "Featurization",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
     ],
     "Output": [
         "Image",
         "Descriptor"
     ],
-    "Output Type": [
-        "Float"
-    ],
-    "Output Shape": "Matrix",
+    "Output Dimension": 1369,
+    "Output Consistency": "Fixed",
     "Interpretation": "Image representation of a molecule. Each pixel represents a molecular feature",
     "Tag": [
         "Descriptor"
     ],
     "Publication": "https://www.nature.com/articles/s42256-021-00301-6",
+    "Publication Type": "Peer reviewed",
+    "Publication Year": 2021,
     "Source Code": "https://github.com/shenwanxiang/bidd-molmap",
-    "License": "GPL-3.0",
+    "License": "GPL-3.0-only",
     "Contributor": "miquelduranfrigola",
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
+    "Incorporation Date": "2022-08-25",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos6m4j",
     "Docker Architecture": [
         "AMD64"
+    ],
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
+    "Deployment": [
+        "Local"
     ]
 }
