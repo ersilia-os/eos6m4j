@@ -2,44 +2,87 @@
 
 Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.
 
-## Identifiers
+This model was incorporated on 2022-08-25.
 
-* EOS model ID: `eos6m4j`
-* Slug: `bidd-molmap-desc`
+## Information
+### Identifiers
+- **Ersilia Identifier:** `eos6m4j`
+- **Slug:** `bidd-molmap-desc`
 
-## Characteristics
+### Domain
+- **Task:** `Representation`
+- **Subtask:** `Featurization`
+- **Biomedical Area:** `Any`
+- **Target Organism:** `Not Applicable`
+- **Tags:** `Descriptor`
 
-* Input: `Compound`
-* Input Shape: `Single`
-* Task: `Generative`
-* Output: `Image, Descriptor`
-* Output Type: `Float`
-* Output Shape: `Matrix`
-* Interpretation: Image representation of a molecule. Each pixel represents a molecular feature
+### Input
+- **Input:** `Compound`
+- **Input Dimension:** `1`
 
-## References
+### Output
+- **Output Dimension:** `1369`
+- **Output Consistency:** `Fixed`
+- **Interpretation:** Image representation of a molecule. Each pixel represents a molecular feature
 
-* [Publication](https://www.nature.com/articles/s42256-021-00301-6)
-* [Source Code](https://github.com/shenwanxiang/bidd-molmap)
-* Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
+Below are the **Output Columns** of the model:
+| Name | Type | Direction | Description |
+|------|------|-----------|-------------|
+| feature_0000 | float |  | Feature 0 of the MolMap descriptor |
+| feature_0001 | float |  | Feature 1 of the MolMap descriptor |
+| feature_0002 | float |  | Feature 2 of the MolMap descriptor |
+| feature_0003 | float |  | Feature 3 of the MolMap descriptor |
+| feature_0004 | float |  | Feature 4 of the MolMap descriptor |
+| feature_0005 | float |  | Feature 5 of the MolMap descriptor |
+| feature_0006 | float |  | Feature 6 of the MolMap descriptor |
+| feature_0007 | float |  | Feature 7 of the MolMap descriptor |
+| feature_0008 | float |  | Feature 8 of the MolMap descriptor |
+| feature_0009 | float |  | Feature 9 of the MolMap descriptor |
 
-## Ersilia model URLs
-* [GitHub](https://github.com/ersilia-os/eos6m4j)
-* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip)
-* [DockerHub](https://hub.docker.com/r/ersiliaos/eos6m4j) (AMD64)
+_10 of 1369 columns are shown_
+### Source and Deployment
+- **Source:** `Local`
+- **Source Type:** `External`
+- **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos6m4j](https://hub.docker.com/r/ersiliaos/eos6m4j)
+- **Docker Architecture:** `AMD64`
+- **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip)
 
-## Citation
+### Resource Consumption
 
-If you use this model, please cite the [original authors](https://www.nature.com/articles/s42256-021-00301-6) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
-## License
+### References
+- **Source Code**: [https://github.com/shenwanxiang/bidd-molmap](https://github.com/shenwanxiang/bidd-molmap)
+- **Publication**: [https://www.nature.com/articles/s42256-021-00301-6](https://www.nature.com/articles/s42256-021-00301-6)
+- **Publication Type:** `Peer reviewed`
+- **Publication Year:** `2021`
+- **Ersilia Contributor:** [miquelduranfrigola](https://github.com/miquelduranfrigola)
 
-This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a GPL-3.0 license.
+### License
+This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [GPL-3.0-only](LICENSE) license.
 
-Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
+**Notice**: Ersilia grants access to models _as is_, directly from the original authors, please refer to the original code repository and/or publication if you use the model in your research.
 
-## About Us
 
-The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+## Use
+To use this model locally, you need to have the [Ersilia CLI](https://github.com/ersilia-os/ersilia) installed.
+The model can be **fetched** using the following command:
+```bash
+# fetch model from the Ersilia Model Hub
+ersilia fetch eos6m4j
+```
+Then, you can **serve**, **run** and **close** the model as follows:
+```bash
+# serve the model
+ersilia serve eos6m4j
+# generate an example file
+ersilia example -n 3 -f my_input.csv
+# run the model
+ersilia run -i my_input.csv -o my_output.csv
+# close the model
+ersilia close
+```
 
-[Help us](https://www.ersilia.io/donate) achieve our mission!
+## About Ersilia
+The [Ersilia Open Source Initiative](https://ersilia.io) is a tech non-profit organization fueling sustainable research in the Global South.
+Please [cite](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff) the Ersilia Model Hub if you've found this model to be useful. Always [let us know](https://github.com/ersilia-os/ersilia/issues) if you experience any issues while trying to run it.
+If you want to contribute to our mission, consider [donating](https://www.ersilia.io/donate) to Ersilia!
