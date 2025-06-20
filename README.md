@@ -50,7 +50,12 @@ _10 of 1369 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `433`
 - **Environment Size (Mb):** `1083`
+- **Image Size (Mb):** `1576.18`
 
+**Computational Performance (seconds):**
+- 10 inputs: `83.55`
+- 100 inputs: `304.17`
+- 10000 inputs: `-1`
 
 ### References
 - **Source Code**: [https://github.com/shenwanxiang/bidd-molmap](https://github.com/shenwanxiang/bidd-molmap)
