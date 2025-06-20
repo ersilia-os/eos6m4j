@@ -40,9 +40,13 @@
     "Incorporation Date": "2022-08-25",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos6m4j",
-    "Docker Architecture": [
-        "AMD64"
-    ],
+    "Docker Architecture": "AMD64",
     "Model Size": 433.0,
-    "Environment Size": 1083.0
+    "Environment Size": 1083.0,
+    "Image Size": 1576.18,
+    "Computational Performance 1": 83.55,
+    "Computational Performance 2": 251.44,
+    "Computational Performance 3": 304.17,
+    "Computational Performance 4": -1.0,
+    "Computational Performance 5": -1.0
 }
