@@ -291,7 +291,7 @@ def CalculateSchiultz(mol):
     Distance = np.array(Chem.GetDistanceMatrix(mol), "d")
     Adjacent = np.array(Chem.GetAdjacencyMatrix(mol), "d")
     VertexDegree = sum(Adjacent)
-    res = sum(scipy.dot((Distance + Adjacent), VertexDegree))
+    res = sum(np.dot((Distance + Adjacent), VertexDegree))
     if res == 0:
         res = MINVALUE
 
