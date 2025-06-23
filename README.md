@@ -48,7 +48,7 @@ _10 of 1369 columns are shown_
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6m4j.zip)
 
 ### Resource Consumption
-- **Model Size (Mb):** `433`
+- **Model Size (Mb):** `430`
 - **Environment Size (Mb):** `1083`
 - **Image Size (Mb):** `1576.18`
 
@@ -62,7 +62,7 @@ _10 of 1369 columns are shown_
 - **Publication**: [https://www.nature.com/articles/s42256-021-00301-6](https://www.nature.com/articles/s42256-021-00301-6)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
-- **Ersilia Contributor:** [miquelduranfrigola](https://github.com/miquelduranfrigola)
+- **Ersilia Contributor:** [GemmaTuron](https://github.com/GemmaTuron)
 
 ### License
 This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [GPL-3.0-only](LICENSE) license.
