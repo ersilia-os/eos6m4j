@@ -3,7 +3,7 @@
     "Slug": "bidd-molmap-desc",
     "Status": "Ready",
     "Title": "Molecular maps based on broadly learned knowledge-based representations",
-    "Description": "Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.",
+    "Description": "Lays out 1,369 physicochemical descriptors as a two-dimensional map, the descriptor counterpart to the fingerprint-based variant from the same work. Feature positions come from clustering 1,456 descriptors by their correlation across 8.5 million molecules, so that chemically related quantities occupy neighbouring pixels and local convolution filters see coherent information. The representation is designed as input to image models rather than for direct reading, and individual pixels are not meaningful in isolation.",
     "Deployment": [
         "Local"
     ],
@@ -20,7 +20,7 @@
     ],
     "Output Dimension": 1369,
     "Output Consistency": "Fixed",
-    "Interpretation": "Image representation of a molecule. Each pixel represents a molecular feature",
+    "Interpretation": "Descriptor-based molecular map arranged as a 37 by 37 image for convolutional models.",
     "Tag": [
         "Descriptor"
     ],
@@ -34,7 +34,7 @@
     "Publication Year": 2021,
     "Publication": "https://doi.org/10.1038/s42256-021-00301-6",
     "Source Code": "https://github.com/shenwanxiang/bidd-molmap",
-    "License": "GPL-3.0-only",
+    "License": "MIT",
     "Contributor": "miquelduranfrigola",
     "Incorporation Date": "2022-08-25",
     "Last Packaging Date": "2025-10-14",
