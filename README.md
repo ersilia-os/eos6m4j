@@ -2,7 +2,7 @@
 
 Molecular representation of small molecules via descriptor-based molecular maps (images). The fingerprint-based molecular maps are available at eos59rr. These images can be used as inputs for an image-based deep learning model such as a convolutional neural network. The authors have demonstrated high performance of MolMap out-of-the-box with a broad range of tasks from MoleculeNet.
 
-This model was incorporated on 2022-08-25.Last packaged on 2025-10-14.
+This model was incorporated on 2022-08-25.Last packaged on 2026-08-31.
 
 ## Information
 ### Identifiers
@@ -50,12 +50,12 @@ _10 of 1369 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `430`
 - **Environment Size (Mb):** `1085`
-- **Image Size (Mb):** `1583.44`
+- **Image Size (Mb):** `1601.83`
 
 **Computational Performance (seconds):**
-- 10 inputs: `45.09`
-- 100 inputs: `46.29`
-- 10000 inputs: `1448.03`
+- 10 inputs: `37.46`
+- 100 inputs: `34.03`
+- 10000 inputs: `1035.06`
 
 ### References
 - **Source Code**: [https://github.com/shenwanxiang/bidd-molmap](https://github.com/shenwanxiang/bidd-molmap)
