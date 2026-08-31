@@ -28,16 +28,16 @@ This model was incorporated on 2022-08-25.Last packaged on 2025-10-14.
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| feature_0000 | float |  | Feature 0 of the MolMap descriptor |
-| feature_0001 | float |  | Feature 1 of the MolMap descriptor |
-| feature_0002 | float |  | Feature 2 of the MolMap descriptor |
-| feature_0003 | float |  | Feature 3 of the MolMap descriptor |
-| feature_0004 | float |  | Feature 4 of the MolMap descriptor |
-| feature_0005 | float |  | Feature 5 of the MolMap descriptor |
-| feature_0006 | float |  | Feature 6 of the MolMap descriptor |
-| feature_0007 | float |  | Feature 7 of the MolMap descriptor |
-| feature_0008 | float |  | Feature 8 of the MolMap descriptor |
-| feature_0009 | float |  | Feature 9 of the MolMap descriptor |
+| feat_0000 | float |  | Feature 0 of the MolMap descriptor |
+| feat_0001 | float |  | Feature 1 of the MolMap descriptor |
+| feat_0002 | float |  | Feature 2 of the MolMap descriptor |
+| feat_0003 | float |  | Feature 3 of the MolMap descriptor |
+| feat_0004 | float |  | Feature 4 of the MolMap descriptor |
+| feat_0005 | float |  | Feature 5 of the MolMap descriptor |
+| feat_0006 | float |  | Feature 6 of the MolMap descriptor |
+| feat_0007 | float |  | Feature 7 of the MolMap descriptor |
+| feat_0008 | float |  | Feature 8 of the MolMap descriptor |
+| feat_0009 | float |  | Feature 9 of the MolMap descriptor |
 
 _10 of 1369 columns are shown_
 ### Source and Deployment
