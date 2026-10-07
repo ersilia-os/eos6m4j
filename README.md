@@ -1,6 +1,6 @@
 # Molecular maps based on broadly learned knowledge-based representations
 
-Lays out 1,369 physicochemical descriptors as a two-dimensional map, the descriptor counterpart to the fingerprint-based variant from the same work. Feature positions come from clustering 1,456 descriptors by their correlation across 8.5 million molecules, so that chemically related quantities occupy neighbouring pixels and local convolution filters see coherent information. The representation is designed as input to image models rather than for direct reading, and individual pixels are not meaningful in isolation.
+Arranges 1,456 molecular descriptors, spanning thirteen constitutional, physicochemical and topological classes, onto a 37 by 37 grid whose layout follows how the descriptors correlate across 8.5 million PubChem molecules, so chemically related quantities occupy neighbouring cells and a convolution filter sees coherent information. Shen and colleagues built it as a drop-in input for image models rather than for direct reading. Ersilia sums the thirteen descriptor-class channels into one flattened map, so individual values are channel sums and mean little in isolation.
 
 This model was incorporated on 2022-08-25.Last packaged on 2026-08-31.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-08-25.Last packaged on 2026-08-31.
 ### Output
 - **Output Dimension:** `1369`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Descriptor-based molecular map arranged as a 37 by 37 image for convolutional models.
+- **Interpretation:** 1,369 cells of a 37 by 37 descriptor map, positioned so that correlated descriptors sit together.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
