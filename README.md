@@ -3,7 +3,7 @@
 Arranges 1,456 molecular descriptors, spanning thirteen constitutional, physicochemical and topological classes, onto a 37 by 37 grid whose layout follows how the descriptors correlate across 8.5 million PubChem molecules, so chemically related quantities occupy neighbouring cells and a convolution filter sees coherent information. Shen and colleagues built it as a drop-in input for image models rather than for direct reading. Ersilia sums the thirteen descriptor-class channels into one flattened map, so individual values are channel sums and mean little in isolation.
 
 This model was incorporated on 2022-08-25.
-Last packaged on 2026-08-31.
+Last packaged on 2026-11-13.
 
 ## Information
 ### Identifiers
@@ -51,12 +51,12 @@ _10 of 1369 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `114`
 - **Environment Size (Mb):** `1086`
-- **Image Size (Mb):** `1601.83`
+- **Image Size (Mb):** `469.16`
 
 **Computational Performance (seconds):**
-- 10 inputs: `37.46`
-- 100 inputs: `34.03`
-- 10000 inputs: `1035.06`
+- 10 inputs: `40.36`
+- 100 inputs: `40.19`
+- 10000 inputs: `1407.63`
 
 ### References
 - **Source Code**: [https://github.com/shenwanxiang/bidd-molmap](https://github.com/shenwanxiang/bidd-molmap)
