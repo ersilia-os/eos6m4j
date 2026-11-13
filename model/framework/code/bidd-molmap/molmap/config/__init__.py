@@ -32,7 +32,10 @@ def load_config(ftype="descriptor", metric="cosine"):
 
     name = "%s_%s.cfg.gzip" % (ftype, metric)
 
-    dirf = os.path.dirname(__file__)
+    # Ersilia: configs used at inference live in model/checkpoints/
+    dirf = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..", "checkpoints")
+    )
     filename = os.path.join(dirf, name)
     print("Loading config {0}".format(filename))
 
